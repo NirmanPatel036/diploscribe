@@ -1,4 +1,4 @@
-# Diploscribe - AI-Powered Text Transformation Platform
+# Diploscribe AI-Powered Text Transformation Platform
 
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
