@@ -261,7 +261,7 @@ export default function TransformPage() {
         </div>
       )}
 
-      <main className="flex-1 flex items-center justify-center py-8 md:py-16 px-4">
+      <main className="flex-1 flex items-center justify-center py-8 md:py-16 px-4 pt-15 md:pt-8">
         <div className="w-full max-w-7xl my-6 md:my-12 mb-16 md:mb-32">
           {/* Back to Home Button */}
           <div className="mb-6 md:mb-8">
