@@ -48,7 +48,7 @@ export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const currentTestimonial = testimonialCases[currentIndex]
 
@@ -92,16 +92,16 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="relative py-16 sm:py-20 border-t border-border/40">
+    <section id="testimonials" className="relative py-12 sm:py-16 md:py-20 border-t border-border/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left: Case Studies List */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 border border-border/50 rounded-full text-xs text-muted-foreground uppercase tracking-wider mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-border/50 rounded-full text-xs text-muted-foreground uppercase tracking-wider mb-6 md:mb-8">
               Showcase
             </div>
 
-            <h2 className="text-4xl sm:text-5xl font-serif font-light leading-tight mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light leading-tight mb-4 md:mb-6 tracking-tight">
               Why not just <em>ChatGPT?</em>
             </h2>
 
