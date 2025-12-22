@@ -43,14 +43,14 @@ export default function Home() {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light leading-[1.1] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-light leading-[1.1] tracking-tight">
               Effortlessly.
               <br />
               <span className="text-muted-foreground">Elevate your message.</span>
             </h1>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
               Whether your audience is clients or colleagues, Diploscribe helps you deliver clear, professional
               communication every time.
             </p>
