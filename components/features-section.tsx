@@ -127,19 +127,19 @@ export function FeaturesSection() {
         </div>
 
         {/* Bento Grid */}
-        <div className="max-w-6xl mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto space-y-4 md:space-y-6">
           {/* First Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {/* Instant Text Transformation - 1 column */}
             <div className="col-span-1 border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden hover:border-border/80 transition-all duration-300">
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-serif font-light mb-2 tracking-tight">
+              <div className="p-4 md:p-6 text-center">
+                <h3 className="text-lg md:text-xl font-serif font-light mb-2 tracking-tight">
                   Instant Text Transformation
                 </h3>
-                <p className="text-sm text-muted-foreground max-w-xs mx-auto mb-6 leading-relaxed">
+                <p className="text-xs md:text-sm text-muted-foreground max-w-xs mx-auto mb-4 md:mb-6 leading-relaxed">
                   Transform your text in real-time with multiple style options under seconds
                 </p>
-                <div className="w-full h-[180px] flex items-center justify-center">
+                <div className="w-full h-45 flex items-center justify-center">
                   <div className="flex gap-3">
                     {/* Left side - Style options */}
                     <div className="flex flex-col gap-1 text-[10px] text-muted-foreground">
@@ -207,7 +207,7 @@ export function FeaturesSection() {
                 <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6 leading-relaxed">
                   Choose from Professional, Casual, Technical, Precise, and more communication styles
                 </p>
-                <div className="w-full h-[180px] flex items-center justify-center gap-3">
+                <div className="w-full h-45 flex items-center justify-center gap-3">
                   <div className="flex gap-2">
                     {/* Pro */}
                     <div className="w-20 h-28 bg-linear-to-b from-blue-500/20 to-blue-600/40 rounded-lg border border-border/40 relative overflow-hidden group cursor-pointer transition-all duration-300 hover:w-32">
