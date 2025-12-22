@@ -49,11 +49,11 @@ export function TransformControls({ tone, setTone, length, setLength, onFileUplo
   return (
     <div className="space-y-3">
       {/* Settings Row */}
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
         {/* Tone Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex-1 justify-between bg-transparent">
+            <Button variant="outline" className="flex-1 justify-between bg-transparent text-sm">
               <span className="capitalize">{tone}</span>
               <span className="text-muted-foreground text-xs">Tone</span>
             </Button>
@@ -102,27 +102,28 @@ export function TransformControls({ tone, setTone, length, setLength, onFileUplo
       </div>
 
       {/* Action Row */}
-      <div className="flex items-center justify-between p-4 border border-border/50 bg-background">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-0 p-3 md:p-4 border border-border/50 bg-background">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 flex-1">
           <Button
             onClick={onTransform}
             disabled={disabled || isLoading}
             variant="outline"
             size="sm"
-            className="bg-transparent hover:bg-muted/50"
+            className="bg-transparent hover:bg-muted/50 w-full sm:w-auto"
           >
             <Wand2 className="w-4 h-4 mr-2" />
             {isLoading ? "Rephrasing..." : "Rephrase"}
           </Button>
-          <span className="text-xs text-muted-foreground">or select a sentence to rephrase</span>
+          <span className="text-xs text-muted-foreground text-center sm:text-left">or select the sample text to rephrase</span>
         </div>
         
         <Button
           size="sm"
-          className="bg-foreground text-background hover:bg-foreground/90 cursor-pointer"
+          className="bg-foreground text-background hover:bg-foreground/90 cursor-pointer w-full sm:w-auto whitespace-nowrap"
           onClick={onChromeExtensionClick}
         >
-         Chrome Extension<span className="ml-1 text-muted-foreground">— on it's way</span>
+         <span className="hidden sm:inline">Chrome Extension<span className="ml-1 text-muted-foreground">— on it's way</span></span>
+         <span className="sm:hidden">Chrome Extension <span className="text-muted-foreground text-xs">— coming soon</span></span>
         </Button>
       </div>
     </div>
