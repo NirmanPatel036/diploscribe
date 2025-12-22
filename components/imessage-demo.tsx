@@ -82,6 +82,9 @@ export function IMessageDemo() {
 
     const nextMessage = currentConversation[currentIndex]
     
+    // No initial delay for the first message, 2s pause for subsequent messages
+    const initialDelay = currentIndex === 0 ? 0 : 2000
+    
     // Show typing indicator for ALL messages (both user and other)
     const typingTimer = setTimeout(() => {
       setIsTyping(true)
@@ -108,7 +111,7 @@ export function IMessageDemo() {
       }, 2000) // 2 seconds for typing indicator
 
       return () => clearTimeout(messageTimer)
-    }, 2000) // 2 seconds pause before next message starts
+    }, initialDelay) // No delay for first message, 2s for subsequent
 
     return () => clearTimeout(typingTimer)
   }, [currentIndex, currentSetIndex, currentConversation])
@@ -118,7 +121,7 @@ export function IMessageDemo() {
       {/* Chat Container */}
       <div 
         ref={containerRef}
-        className="relative w-full h-[500px] overflow-y-auto overflow-x-hidden scrollbar-hide"
+        className="relative w-full h-125 overflow-y-auto overflow-x-hidden scrollbar-hide"
         style={{
           maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 100%)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 100%)',
