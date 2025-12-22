@@ -123,24 +123,24 @@ export default function PricingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-20 md:pt-24 pb-12 md:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-light leading-tight tracking-tight mb-6">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight tracking-tight mb-4 md:mb-6">
               Choose Your Plan
             </h1>
-            <p className="text-lg text-muted-foreground mb-12">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 md:mb-12 px-4">
               Simple, transparent pricing. Start free, upgrade when you need more.
             </p>
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto mt-6 md:mt-8">
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative p-8 border backdrop-blur-sm transition-all duration-300 ${
+                className={`relative p-6 md:p-8 border backdrop-blur-sm transition-all duration-300 ${
                   plan.highlighted
                     ? "border-foreground/40 bg-card/80 lg:scale-105 lg:z-10"
                     : "border-border/40 bg-card/50"
@@ -148,26 +148,26 @@ export default function PricingPage() {
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="px-4 py-1 bg-foreground text-background text-xs font-medium uppercase tracking-wider rounded-full">
+                    <div className="px-3 md:px-4 py-1 bg-foreground text-background text-xs font-medium uppercase tracking-wider rounded-full">
                       Most Popular
                     </div>
                   </div>
                 )}
 
                 {/* Plan Header */}
-                <div className="mb-8">
-                  <h3 className="text-2xl font-serif font-light mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-2 mb-4">
+                <div className="mb-6 md:mb-8">
+                  <h3 className="text-xl md:text-2xl font-serif font-light mb-2">{plan.name}</h3>
+                  <div className="flex items-baseline gap-2 mb-3 md:mb-4">
                     <>
-                      <span className="text-5xl font-serif font-light">${plan.price}</span>
-                      <span className="text-muted-foreground">{plan.price === "0" ? "/month" : plan.name === "Lifetime" ? "/one-time" : "/month"}</span>
+                      <span className="text-4xl md:text-5xl font-serif font-light">${plan.price}</span>
+                      <span className="text-sm md:text-base text-muted-foreground">{plan.price === "0" ? "/month" : plan.name === "Lifetime" ? "/one-time" : "/month"}</span>
                     </>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{plan.description}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{plan.description}</p>
                 </div>
 
                 {/* Features List */}
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-foreground shrink-0 mt-0.5" />
