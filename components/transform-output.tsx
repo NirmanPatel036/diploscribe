@@ -76,7 +76,7 @@ export function TransformOutput({ value }: TransformOutputProps) {
   }
 
   return (
-    <div className="relative border border-border/50 bg-background overflow-hidden h-full min-h-[400px]">
+    <div className="relative border border-border/50 bg-background overflow-hidden h-full min-h-[250px] sm:min-h-[300px] md:min-h-[400px]">
       {/* Header */}
       <div className="p-4 border-b border-border/50">
         <span className="text-sm text-muted-foreground">👔 Transformed Output</span>
