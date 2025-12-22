@@ -76,8 +76,8 @@ function SignUpForm() {
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* Left Side - Form */}
-      <div className="flex items-center justify-center p-8 bg-background">
-        <div className="w-full max-w-md space-y-8">
+      <div className="flex items-center justify-center p-4 sm:p-6 md:p-8 bg-background">
+        <div className="w-full max-w-md space-y-6 md:space-y-8">
           {/* Logo/Avatar */}
           <div className="flex justify-center">
             <Image
@@ -91,12 +91,12 @@ function SignUpForm() {
 
           {/* Header */}
           <div className="text-center space-y-2">
-            <h1 className="text-3xl font-semibold text-foreground">Create an account</h1>
-            <p className="text-muted-foreground">Get started with Diploscribe today.</p>
+            <h1 className="text-2xl sm:text-3xl font-semibold text-foreground">Create an account</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">Get started with Diploscribe today.</p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSignUp} className="space-y-6">
+          <form onSubmit={handleSignUp} className="space-y-4 md:space-y-6">
             {/* Error Message */}
             {error && (
               <div className="p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded text-sm text-red-600 dark:text-red-400">
