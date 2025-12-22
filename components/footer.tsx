@@ -170,7 +170,7 @@ export function Footer() {
       <footer className="relative border-t border-border/40 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Main Footer Content */}
-          <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
+          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12 mb-12 md:mb-16">
             {/* Brand Column - Left Side */}
             <div className="md:w-1/4">
               <Link href="/" className="inline-block mb-4">
