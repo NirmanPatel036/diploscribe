@@ -47,7 +47,7 @@ export default function TransformPage() {
     "Finalizing..."
   ]
   const uploadTextIndex = useRef(0)
-  const uploadTextInterval = useRef<NodeJS.Timeout | null>(null)
+  const uploadTextInterval = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // Rotate texts when loading
   useEffect(() => {
@@ -261,10 +261,10 @@ export default function TransformPage() {
         </div>
       )}
 
-      <main className="flex-1 flex items-center justify-center py-16 px-4">
-        <div className="w-full max-w-7xl my-12 mb-32">
+      <main className="flex-1 flex items-center justify-center py-8 md:py-16 px-4">
+        <div className="w-full max-w-7xl my-6 md:my-12 mb-16 md:mb-32">
           {/* Back to Home Button */}
-          <div className="mb-8">
+          <div className="mb-6 md:mb-8">
             <Link href="/home">
               <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="w-4 h-4" />
@@ -274,7 +274,7 @@ export default function TransformPage() {
           </div>
 
           {/* Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             {/* Input Area */}
             <div className="space-y-4">
               <TransformInput 
@@ -305,7 +305,7 @@ export default function TransformPage() {
               {output ? (
                 <TransformOutput value={displayedOutput} />
               ) : isLoading ? (
-                <div className="h-full min-h-[400px] flex items-center justify-center border border-border/50 bg-card/30 relative overflow-hidden">
+                <div className="h-full min-h-75 md:min-h-100 flex items-center justify-center border border-border/50 bg-card/30 relative overflow-hidden">
                   <div className="relative h-20 w-full max-w-md">
                     {ROTATING_TEXTS.map((text, index) => {
                       const isActive = index === currentTextIndex
@@ -338,8 +338,8 @@ export default function TransformPage() {
                   </div>
                 </div>
               ) : (
-                <div className="h-full min-h-[400px] flex items-center justify-center border border-border/50 bg-card/30">
-                  <p className="text-muted-foreground text-sm">Your transformed text will appear here</p>
+                <div className="h-full min-h-75 md:min-h-100 flex items-center justify-center border border-border/50 bg-card/30">
+                  <p className="text-muted-foreground text-xs sm:text-sm px-4 text-center">Your transformed text will appear here</p>
                 </div>
               )}
             </div>
