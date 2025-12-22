@@ -178,12 +178,12 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-12 md:pb-16">
         {/* Page Header */}
-        <div className="mb-12 flex items-start justify-between">
+        <div className="mb-8 md:mb-12 flex flex-col sm:flex-row items-start justify-between gap-4">
           <div>
-            <h1 className="font-serif text-4xl md:text-5xl font-light mb-3 text-balance">Usage Dashboard</h1>
-            <p className="text-muted-foreground text-lg">Track your text transformation activity and insights</p>
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-2 md:mb-3 text-balance">Usage Dashboard</h1>
+            <p className="text-muted-foreground text-base md:text-lg">Track your text transformation activity and insights</p>
           </div>
           <Link href="/home">
             <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground">
@@ -195,7 +195,7 @@ export default function DashboardPage() {
 
         {/* Subscription Card */}
         {subscription && (
-          <div className="mb-8">
+          <div className="mb-6 md:mb-8">
             <SubscriptionCard
               planName={subscription.plan_name}
               status={subscription.status}
@@ -208,7 +208,7 @@ export default function DashboardPage() {
         )}
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
           <StatsCards
             icon={Activity}
             label="Total Transformations"
