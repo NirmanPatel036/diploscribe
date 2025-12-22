@@ -246,35 +246,39 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/40">
             <nav className="flex flex-col gap-4">
-              <Link href="/#features" className="text-sm text-muted-foreground hover:text-foreground">
-                Features
-              </Link>
-              <Link href="/#testimonials" className="text-sm text-muted-foreground hover:text-foreground">
-                Customers
-              </Link>
-              <Link href="/#pricing" className="text-sm text-muted-foreground hover:text-foreground">
-                Pricing
-              </Link>
-              <Link href="/#docs" className="text-sm text-muted-foreground hover:text-foreground">
-                Docs
-              </Link>
-              <div className="flex flex-col gap-2 pt-2">
-                {user ? (
-                  <>
-                    <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback className="bg-purple-600 text-white text-xs">
-                          {getInitials()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium truncate">{getDisplayName()}</p>
-                        <p className="text-xs text-muted-foreground truncate">{user.email}</p>
-                      </div>
+              {user ? (
+                <>
+                  {/* User Profile Card */}
+                  <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
+                    <Avatar className="h-8 w-8">
+                      <AvatarFallback className="bg-purple-600 text-white text-xs">
+                        {getInitials()}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium truncate">{getDisplayName()}</p>
+                      <p className="text-xs text-muted-foreground truncate">{user.email}</p>
                     </div>
+                  </div>
+
+                  {/* Authenticated Navigation Links */}
+                  <Link href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Dashboard
+                  </Link>
+                  <Link href="/home" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Home
+                  </Link>
+                  <Link href="/transform" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Transform
+                  </Link>
+                  <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Pricing
+                  </Link>
+
+                  <div className="border-t border-border/40 pt-2 mt-2 flex flex-col gap-2">
                     <a href="https://nirmanhere.vercel.app" target="_blank" rel="noopener noreferrer" className="w-full">
                       <Button variant="ghost" size="sm" className="w-full text-sm justify-start">
-                        <User className="mr-2 h-4 w-4" />
+                        <LaptopMinimal className="mr-2 h-4 w-4" />
                         About Developer
                       </Button>
                     </a>
@@ -287,24 +291,44 @@ export function Header() {
                       <LogOut className="mr-2 h-4 w-4" />
                       Sign Out
                     </Button>
-                    <ThemeToggle />
-                  </>
-                ) : (
-                  <>
-                    <Link href="/auth/signin" className="w-full">
+                    <div className="flex justify-center pt-2">
+                      <ThemeToggle />
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Pre-authenticated Navigation Links */}
+                  <Link href="/#features" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Features
+                  </Link>
+                  <Link href="/#testimonials" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Customers
+                  </Link>
+                  <Link href="/#pricing" className="text-sm text-muted-foreground hover:text-foreground text-center" onClick={() => setMobileMenuOpen(false)}>
+                    Pricing
+                  </Link>
+                  <Link href="https://github.com/NirmanPatel036/diploscribe" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground text-center">
+                    Docs
+                  </Link>
+
+                  <div className="border-t border-border/40 pt-2 mt-2 flex flex-col gap-2">
+                    <Link href="/auth/signin" className="w-full" onClick={() => setMobileMenuOpen(false)}>
                       <Button variant="ghost" size="sm" className="w-full text-sm">
                         Sign In
                       </Button>
                     </Link>
-                    <Link href="/auth/signup" className="w-full">
+                    <Link href="/auth/signup" className="w-full" onClick={() => setMobileMenuOpen(false)}>
                       <Button size="sm" className="w-full text-sm">
                         Get Started
                       </Button>
                     </Link>
-                    <ThemeToggle />
-                  </>
-                )}
-              </div>
+                    <div className="flex justify-center pt-2">
+                      <ThemeToggle />
+                    </div>
+                  </div>
+                </>
+              )}
             </nav>
           </div>
         )}
