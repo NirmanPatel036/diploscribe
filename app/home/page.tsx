@@ -28,7 +28,7 @@ export default async function HomePage() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32">
           {/* Split Layout: iMessage Demo + Content */}
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-7xl mx-auto">
             
             {/* Left: iMessage Demo */}
             <div className="order-2 md:order-1">
@@ -36,14 +36,14 @@ export default async function HomePage() {
             </div>
 
             {/* Right: Welcome Content */}
-            <div className="order-1 md:order-2 space-y-8">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-light leading-[1.1] tracking-tight">
+            <div className="order-1 md:order-2 space-y-6 md:space-y-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-[1.1] tracking-tight">
                 Welcome,
                 <br />
                 <span className="text-muted-foreground">to the <i>lazy</i> club.</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Transform your communication with AI-powered text transformations
               </p>
 
