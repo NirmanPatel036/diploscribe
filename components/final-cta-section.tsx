@@ -23,17 +23,17 @@ export function FinalCTASection() {
   }, [])
 
   return (
-    <section className="relative py-32 border-t border-border/40 bg-muted/10">
+    <section className="relative py-16 sm:py-24 md:py-32 border-t border-border/40 bg-muted/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
           {/* Main CTA Content */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-light leading-tight tracking-tight">
             Transform your communication.
             <br />
             <span className="text-muted-foreground">Start today.</span>
           </h2>
 
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
             Join thousands of teams already using Diploscribe to communicate with clarity and confidence.
           </p>
 
