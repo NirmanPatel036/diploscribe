@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Diploscribe - Transform Your Communication",
   description: "Professional AI-powered text transformation for developers and teams",
   generator: "v0.app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
   icons: {
     icon: [
       {
