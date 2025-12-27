@@ -12,8 +12,14 @@ export async function GET(request: Request) {
     if (!error) {
       const forwardedHost = request.headers.get('x-forwarded-host')
       const isLocalEnv = process.env.NODE_ENV === 'development'
+      
+      // Use NEXT_PUBLIC_SITE_URL if available, otherwise fallback
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+      
       if (isLocalEnv) {
         return NextResponse.redirect(`${origin}${next}`)
+      } else if (siteUrl) {
+        return NextResponse.redirect(`${siteUrl}${next}`)
       } else if (forwardedHost) {
         return NextResponse.redirect(`https://${forwardedHost}${next}`)
       } else {
